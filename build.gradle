@@ -31,8 +31,9 @@ dependencies {
     compileOnly 'org.projectlombok:lombok'
     annotationProcessor 'org.projectlombok:lombok'
 
-    // 使用内存数据库 H2；如果将来连接 MySQL，可保留 runtimeOnly
+    // 本地开发默认 H2，生产环境可切到 PostgreSQL（Render）
     implementation 'com.h2database:h2'
+    runtimeOnly 'org.postgresql:postgresql'
 
     // 测试依赖
     testImplementation 'org.springframework.boot:spring-boot-starter-data-jpa-test'
