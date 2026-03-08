@@ -22,82 +22,97 @@ public class QaSeedDataConfig {
             }
 
             Question q1 = new Question(
-                    "为什么人总在凌晨 1:40 认为自己能彻底改变人生？",
-                    "白天我完全理性，到了凌晨就会打开备忘录写《新生活总纲》，第二天再也不看。这个行为到底是意志觉醒还是睡眠不足导致的叙事膨胀？",
-                    "林北北",
-                    LocalDateTime.now().minusDays(2),
-                    TagCodec.join(List.of("深夜", "自我管理", "行为学"))
+                    "我只是周期性点进她主页，这算复吸吗？",
+                    "理论上我已经放下，实践上我每晚都会“顺手”看一眼。这个动作到底是情绪收尾，还是执念续费？",
+                    "战略性嘴硬",
+                    LocalDateTime.now().minusDays(2).minusHours(3),
+                    TagCodec.join(List.of("关系", "自我欺骗", "深夜行为"))
             );
 
             Question q2 = new Question(
-                    "如何科学论证拖延不是懒，而是能量管理？",
-                    "我想要一个听起来足够严谨、又不完全违背常识的解释模型，用来安抚自己和老板。欢迎给出可复现的拖延曲线。",
-                    "周三下午",
-                    LocalDateTime.now().minusDays(1).minusHours(5),
-                    TagCodec.join(List.of("拖延", "职场", "心理"))
+                    "如何分辨自己是在努力，还是在表演努力？",
+                    "我买了新本子、开了新文档、做了新计划，完成感很强，但事情基本没推进。有没有一个可执行的区分标准？",
+                    "工位方法派",
+                    LocalDateTime.now().minusDays(1).minusHours(8),
+                    TagCodec.join(List.of("效率", "拖延", "职场"))
             );
 
             Question q3 = new Question(
-                    "为什么有些人朋友圈像上市公司年报？",
-                    "季度总结、年度复盘、战略升级、组织变革……每条都像在路演。我只是想知道他今晚吃了什么。",
-                    "阿屎同学",
-                    LocalDateTime.now().minusHours(18),
-                    TagCodec.join(List.of("社交媒体", "表达", "互联网观察"))
+                    "为什么有些人做计划像上市敲钟？",
+                    "每次制定目标都要发朋友圈、做海报、写宣言，仪式很足，进度很少。计划公开是不是一种替代性完成？",
+                    "旁观型执行者",
+                    LocalDateTime.now().minusHours(20),
+                    TagCodec.join(List.of("计划", "社交媒体", "行为观察"))
             );
 
             Question q4 = new Question(
-                    "“我只是看看她主页”算不算现实检验行为？",
-                    "理论上我已经放下，实践上我会周期性访问。这个动作到底是情感收尾，还是浏览器缓存依赖？",
-                    "匿名但不完全匿名",
-                    LocalDateTime.now().minusHours(9),
-                    TagCodec.join(List.of("关系", "社交平台", "自我欺骗"))
+                    "人真的能体面地放下一个根本没开始的人吗？",
+                    "我们没在一起，也没说清楚结束，但我已经在脑内写完三季剧情。请问这种“无名分内耗”怎么终止？",
+                    "无剧情不入睡",
+                    LocalDateTime.now().minusHours(14),
+                    TagCodec.join(List.of("情感", "脑补", "边界"))
             );
 
             Question q5 = new Question(
-                    "什么叫做高质量自我感动？",
-                    "我做了很复杂的计划、买了很高级的笔记本、截图发给朋友，最后没有执行。这种满足感为什么如此真实？",
-                    "认真摆烂研究员",
-                    LocalDateTime.now().minusHours(3),
-                    TagCodec.join(List.of("效率", "情绪", "认知偏差"))
+                    "为什么每次说“最后一次看他朋友圈”都像战略欺骗？",
+                    "我每次都说“最后一次”，然后就进入“再确认一次”模式。是不是大脑把偷窥包装成复盘了？",
+                    "克制失败样本",
+                    LocalDateTime.now().minusHours(9),
+                    TagCodec.join(List.of("社交平台", "复吸", "习惯"))
             );
 
-            questionRepository.saveAll(List.of(q1, q2, q3, q4, q5));
+            Question q6 = new Question(
+                    "我反复打开聊天框又关闭，这属于哪一类病理活动？",
+                    "字打好了，删；删完了，再打；最后什么都没发。这个循环到底叫谨慎，还是情绪心电图？",
+                    "打字又撤回",
+                    LocalDateTime.now().minusHours(4),
+                    TagCodec.join(List.of("沟通", "焦虑", "成年礼貌"))
+            );
+
+            questionRepository.saveAll(List.of(q1, q2, q3, q4, q5, q6));
 
             answerRepository.saveAll(List.of(
                     new Answer(
                             q1,
-                            "半夜哲学家",
-                            "这属于典型的“低成本重启幻觉”。凌晨大脑给了你叙事快感，但没有配套执行资源。建议把“新生活总纲”改成“明天中午前只做一件事”。",
-                            LocalDateTime.now().minusDays(1).minusHours(20),
-                            17
+                            "低频复盘师",
+                            "这不叫观察，这叫给执念续费。你不是在收尾，你是在延长片尾字幕。",
+                            LocalDateTime.now().minusDays(1).minusHours(18),
+                            41
                     ),
                     new Answer(
                             q2,
-                            "工位气象局",
-                            "可以把拖延看成能量分配失败：任务不清晰时，大脑会把资源投向即时反馈更高的行为。先拆任务，再开始，不然你会一直“准备开始”。",
-                            LocalDateTime.now().minusHours(22),
-                            23
+                            "精装拖延研究员",
+                            "你做的是“努力前戏”，不是努力本体。真正的努力有一个硬指标：今天有没有留下可验证的产出。",
+                            LocalDateTime.now().minusHours(23),
+                            36
                     ),
                     new Answer(
                             q3,
-                            "冷静围观者",
-                            "朋友圈年报的核心不是分享生活，而是维持“我在持续上升”的叙事稳定性。它是一种低频、公开、可归档的人设维护。",
-                            LocalDateTime.now().minusHours(13),
-                            11
+                            "仪式感会计",
+                            "公开计划会提前释放成就感，像先把庆功宴办了再开工。仪式可以有，但别把它算进进度条。",
+                            LocalDateTime.now().minusHours(17),
+                            28
                     ),
                     new Answer(
                             q4,
-                            "标签心理学",
-                            "严格说是“延迟性脱敏失败”。你不是在看主页，你是在做情绪复习。把入口藏起来，比靠意志更有效。",
-                            LocalDateTime.now().minusHours(7),
-                            29
+                            "边界维护员",
+                            "你放不下的不是人，是你自己写的剧情。先停更想象，再谈体面收场。",
+                            LocalDateTime.now().minusHours(11),
+                            52
                     ),
                     new Answer(
                             q5,
-                            "仪式感工程师",
-                            "高质量自我感动 = 高质量准备动作 + 低质量执行闭环。你获得了“我在努力”的身份奖励，但没有进入“我在完成”的结果奖励。",
+                            "行为拆解师",
+                            "这属于典型战略欺骗：口头版本叫“最后一次”，执行版本叫“再确认一次”。你需要的是断路径，不是立誓。",
+                            LocalDateTime.now().minusHours(7),
+                            45
+                    ),
+                    new Answer(
+                            q6,
+                            "礼貌障碍门诊",
+                            "你不是不会说，你是在同时追求“表达真实”和“零风险后果”。这两个目标一起开，就会无限撤回。",
                             LocalDateTime.now().minusHours(2),
-                            34
+                            33
                     )
             ));
         };
