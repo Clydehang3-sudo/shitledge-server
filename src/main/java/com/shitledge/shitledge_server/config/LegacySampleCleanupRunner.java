@@ -6,9 +6,11 @@ import com.shitledge.shitledge_server.qa.QuestionRepository;
 import jakarta.transaction.Transactional;
 import java.util.List;
 import org.springframework.boot.CommandLineRunner;
+import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
 
 @Component
+@Order(1)
 public class LegacySampleCleanupRunner implements CommandLineRunner {
 
     private static final List<String> LEGACY_SAMPLE_TITLES = List.of(

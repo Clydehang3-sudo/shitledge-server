@@ -10,6 +10,7 @@ public record QuestionSummaryResponse(
         String authorName,
         LocalDateTime createdAt,
         List<String> tags,
+        int likes,
         long answerCount,
         String latestAnswerSnippet
 ) {
